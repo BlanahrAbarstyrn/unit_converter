@@ -1,3 +1,4 @@
+import sys
 from clear_screen import *
 from conversion_formulas import *
 
@@ -28,7 +29,16 @@ def inch_to_mm_menu():
             user_input = float(input("\nEnter a number in inches: "))
             result = inches_to_mm_conversion(user_input)
             print(f"\n{user_input} inches is equal to {result} millimeters\n")
-            break
+            while True:
+                print("\nY = yes, N = no, M = return to main menu")
+                continue_input = input("\nDo another conversion? (Y/N/M) ")
+                match continue_input:
+                    case "Y" | "y":
+                        inch_to_mm_menu()
+                    case "M" | "m":
+                        main_menu()
+                    case _:
+                        sys.exit()
         except ValueError:
             print("\nInvalid input. Please try again.")
 
@@ -39,7 +49,16 @@ def fahr_to_cels_menu():
             user_input = float(input("\nEnter a number in Fahrenheit: "))
             result = fahr_to_cels_conversion(user_input)
             print(f"\n{user_input} Fahrenheit is equal to {result} Celsius\n")
-            break
+            while True:
+                print("\nY = yes, N = no, M = return to main menu")
+                continue_input = input("\nDo another conversion? (Y/N/M) ")
+                match continue_input:
+                    case "Y" | "y":
+                        fahr_to_cels_menu()
+                    case "M" | "m":
+                        main_menu()
+                    case _:
+                        sys.exit()
         except ValueError:
             print("\nInvalid input. Please try again.")
 
@@ -50,7 +69,16 @@ def pound_to_kilo_menu():
             user_input = float(input("\nEnter a number in pounds: "))
             result = pound_to_kilo_converson(user_input)
             print(f"\n{user_input} pounds is equal to {result} kilograms\n")
-            break
+            while True:
+                print("\nY = yes, N = no, M = return to main menu")
+                continue_input = input("\nDo another conversion? (Y/N/M) ")
+                match continue_input:
+                    case "Y" | "y":
+                        pound_to_kilo_menu()
+                    case "M" | "m":
+                        main_menu()
+                    case _:
+                        sys.exit()
         except ValueError:
             print("\nInvalid input. Please try again.")
 
@@ -61,7 +89,16 @@ def mph_to_kmh_menu():
             user_input = float(input("\nEnter a number in miles per hour: "))
             result = mph_to_kmh_conversion(user_input)
             print(f"\n{user_input} miles per hour is equal to {result} kilometers per hour\n")
-            break
+            while True:
+                print("\nY = yes, N = no, M = return to main menu")
+                continue_input = input("\nDo another conversion? (Y/N/M) ")
+                match continue_input:
+                    case "Y" | "y":
+                        mph_to_kmh_menu()
+                    case "M" | "m":
+                        main_menu()
+                    case _:
+                        sys.exit()
         except ValueError:
             print("\nInvalid input. Please try again.")
 
@@ -72,7 +109,16 @@ def knot_to_mph_menu():
             user_input = float(input("\nEnter a number in knots: "))
             result = knots_mph_conversion(user_input)
             print(f"\n{user_input} knots is equal to {result} miles per hour\n")
-            break
+            while True:
+                print("\nY = yes, N = no, M = return to main menu")
+                continue_input = input("\nDo another conversion? (Y/N/M) ")
+                match continue_input:
+                    case "Y" | "y":
+                        knot_to_mph_menu()
+                    case "M" | "m":
+                        main_menu()
+                    case _:
+                        sys.exit()
         except ValueError:
             print("\nInvalid input. Please try again.")
 
