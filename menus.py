@@ -1,6 +1,8 @@
 import sys
 from clear_screen import *
 from conversion_formulas import *
+from typing import Callable
+
 
 def main_menu():
     clear_screen()
@@ -40,7 +42,7 @@ def menu_input_check(user_input: int):
             sys.exit()
 
 
-def conversion_validation(menu_selection, convert_from, convert_to, conversion_function):
+def conversion_validation(menu_selection: int, convert_from: str, convert_to: str, conversion_function: Callable[[float], float]):
     while True:
         try:
             user_input = float(input(f"\nEnter a number in {convert_from}: "))
