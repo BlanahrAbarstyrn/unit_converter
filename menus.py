@@ -9,12 +9,13 @@ def main_menu():
     print("\n2) Fahrenheit to Celcius")
     print("\n3) Pounds to Kilograms")
     print("\n4) mph to km/h")
-    print("\n5) knots to mph\n")
+    print("\n5) knots to mph")
+    print("\n6) quit program\n")
 
     while True:
         try:
             user_input = int(input("\nInput the menu number for the conversion you'd like to do: "))
-            if user_input >= 1 and user_input <= 5:
+            if user_input >= 1 and user_input <= 6:
                 break
             else:
                 print("\nInvalid input. Please try again.")
@@ -136,4 +137,4 @@ def menu_input_check(user_input: int):
         case 5:
             knot_to_mph_menu()
         case _:
-            main_menu()
+            sys.exit()
