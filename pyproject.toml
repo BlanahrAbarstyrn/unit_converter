@@ -1,0 +1,7 @@
+[project]
+name = "unit-converter"
+version = "0.1.0"
+description = "Command line python program to do basic unit conversions"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
