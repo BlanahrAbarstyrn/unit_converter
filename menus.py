@@ -1,18 +1,19 @@
-from clear_screen import clear_screen
-from conversion_formulas import pound_to_kilo_converson, inches_to_mm_conversion, fahr_to_cels_conversion
-
+from clear_screen import *
+from conversion_formulas import *
 
 def main_menu():
     clear_screen()
     print("\n* * * * * * * * * * WELCOME TO THE UNIT CONVERSION TOOL * * * * * * * * * *\n")
     print("\n1) Inches to Millimeters")
     print("\n2) Fahrenheit to Celcius")
-    print("\n3) Pounds to Kilograms\n")
+    print("\n3) Pounds to Kilograms")
+    print("\n4) mph to km/h")
+    print("\n5) knots to mph\n")
 
     while True:
         try:
             user_input = int(input("\nInput the menu number for the conversion you'd like to do: "))
-            if user_input >= 1 and user_input <= 3:
+            if user_input >= 1 and user_input <= 5:
                 break
             else:
                 print("\nInvalid input. Please try again.")
@@ -32,7 +33,7 @@ def inch_to_mm_menu():
             print("\nInvalid input. Please try again.")
 
 
-def fahr_to_celc_menu():
+def fahr_to_cels_menu():
     while True:
         try:
             user_input = float(input("\nEnter a number in Fahrenheit: "))
@@ -54,10 +55,39 @@ def pound_to_kilo_menu():
             print("\nInvalid input. Please try again.")
 
 
-def menu_input_check(user_input):
-    if user_input == 1:
-        inch_to_mm_menu()
-    elif user_input == 2:
-        fahr_to_celc_menu()
-    else:
-        pound_to_kilo_menu()
+def mph_to_kmh_menu():
+    while True:
+        try:
+            user_input = float(input("\nEnter a number in miles per hour: "))
+            result = mph_to_kmh_conversion(user_input)
+            print(f"\n{user_input} miles per hour is equal to {result} kilometers per hour\n")
+            break
+        except ValueError:
+            print("\nInvalid input. Please try again.")
+
+
+def knot_to_mph_menu():
+    while True:
+        try:
+            user_input = float(input("\nEnter a number in knots: "))
+            result = knots_mph_conversion(user_input)
+            print(f"\n{user_input} knots is equal to {result} miles per hour\n")
+            break
+        except ValueError:
+            print("\nInvalid input. Please try again.")
+
+
+def menu_input_check(user_input: int):
+    match user_input:
+        case 1:
+            inch_to_mm_menu()
+        case 2:
+            fahr_to_cels_menu()
+        case 3:
+            pound_to_kilo_menu()
+        case 4:
+            mph_to_kmh_menu()
+        case 5:
+            knot_to_mph_menu()
+        case _:
+            main_menu()
